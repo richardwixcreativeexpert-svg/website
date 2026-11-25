@@ -1,0 +1,835 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Richard Wix Creative Expert - Professional website design, business websites, landing pages and digital solutions.">
+  <title>Richard Wix Creative | Professional Website Designer</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --navy: #101d35;
+      --navy-light: #1b2d4b;
+      --gold: #d5ad65;
+      --gold-light: #f0d7a5;
+      --white: #ffffff;
+      --background: #f7f8fa;
+      --text: #263449;
+      --muted: #68758a;
+      --border: #e6eaf0;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.7;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: min(1120px, 90%);
+      margin: auto;
+    }
+
+    .topbar {
+      background: var(--navy);
+      color: #dbe3ef;
+      font-size: 13px;
+      padding: 9px 0;
+    }
+
+    .topbar .container {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    header {
+      background: rgba(255,255,255,.97);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(12px);
+    }
+
+    nav {
+      min-height: 82px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 25px;
+    }
+
+    .logo {
+      font-family: 'Manrope', sans-serif;
+      font-size: 21px;
+      font-weight: 800;
+      color: var(--navy);
+      line-height: 1.2;
+    }
+
+    .logo span {
+      color: var(--gold);
+    }
+
+    .logo small {
+      display: block;
+      font-size: 10px;
+      letter-spacing: 2px;
+      color: var(--muted);
+      font-weight: 600;
+      margin-top: 5px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      list-style: none;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .nav-links a:hover {
+      color: #b48742;
+    }
+
+    .nav-cta, .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--gold);
+      color: var(--navy);
+      padding: 13px 22px;
+      border-radius: 5px;
+      font-weight: 800;
+      font-size: 14px;
+      transition: .25s ease;
+    }
+
+    .nav-cta:hover, .button:hover {
+      background: var(--gold-light);
+      transform: translateY(-2px);
+    }
+
+    .menu-toggle {
+      display: none;
+      border: 0;
+      background: none;
+      font-size: 28px;
+      color: var(--navy);
+      cursor: pointer;
+    }
+
+    .hero {
+      background:
+        radial-gradient(circle at 85% 20%, rgba(213,173,101,.17), transparent 30%),
+        linear-gradient(115deg, #101d35 0%, #1b2d4b 100%);
+      color: var(--white);
+      padding: 105px 0 110px;
+      overflow: hidden;
+    }
+
+    .hero-content {
+      max-width: 780px;
+    }
+
+    .eyebrow {
+      color: var(--gold-light);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 12px;
+      font-weight: 800;
+      margin-bottom: 22px;
+    }
+
+    .hero h1 {
+      font-family: 'Manrope', sans-serif;
+      font-size: clamp(38px, 6vw, 67px);
+      line-height: 1.12;
+      letter-spacing: -2px;
+      margin-bottom: 25px;
+    }
+
+    .hero h1 span {
+      color: var(--gold-light);
+    }
+
+    .hero p {
+      max-width: 640px;
+      color: #d3dce9;
+      font-size: 17px;
+      margin-bottom: 34px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .button-outline {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid rgba(255,255,255,.45);
+      color: white;
+      padding: 12px 22px;
+      border-radius: 5px;
+      font-weight: 700;
+      font-size: 14px;
+      transition: .25s;
+    }
+
+    .button-outline:hover {
+      background: white;
+      color: var(--navy);
+    }
+
+    .trust-strip {
+      background: #f3f5f8;
+      padding: 25px 0;
+    }
+
+    .trust-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .trust-item {
+      color: var(--navy);
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .trust-item span {
+      color: #b48742;
+      margin-right: 8px;
+    }
+
+    section {
+      padding: 90px 0;
+    }
+
+    .section-heading {
+      max-width: 680px;
+      margin-bottom: 45px;
+    }
+
+    .section-label {
+      color: #b48742;
+      text-transform: uppercase;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 2.5px;
+      margin-bottom: 12px;
+    }
+
+    .section-heading h2 {
+      font-family: 'Manrope', sans-serif;
+      color: var(--navy);
+      font-size: clamp(30px, 4vw, 43px);
+      line-height: 1.2;
+      letter-spacing: -1px;
+      margin-bottom: 16px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 65px;
+      align-items: center;
+    }
+
+    .about-panel {
+      background: var(--navy);
+      color: white;
+      border-radius: 10px;
+      padding: 42px;
+      min-height: 310px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-panel::before {
+      content: "RW";
+      position: absolute;
+      top: 5px;
+      right: 15px;
+      font-family: 'Manrope', sans-serif;
+      font-size: 150px;
+      font-weight: 800;
+      color: rgba(255,255,255,.055);
+    }
+
+    .about-panel h3 {
+      font-family: 'Manrope', sans-serif;
+      font-size: 27px;
+      position: relative;
+    }
+
+    .about-panel p {
+      color: #d1dbea;
+      margin-top: 12px;
+      position: relative;
+    }
+
+    .about-copy p {
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .check-list {
+      list-style: none;
+      margin: 22px 0;
+    }
+
+    .check-list li {
+      margin: 12px 0;
+      color: var(--navy);
+      font-weight: 600;
+    }
+
+    .check-list li::before {
+      content: "✓";
+      color: #b48742;
+      font-weight: 800;
+      margin-right: 11px;
+    }
+
+    .services {
+      background: var(--background);
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .service-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 32px 27px;
+      transition: .3s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 35px rgba(16,29,53,.09);
+      border-color: var(--gold);
+    }
+
+    .service-icon {
+      width: 50px;
+      height: 50px;
+      background: #f6efdf;
+      color: #9a7135;
+      border-radius: 7px;
+      display: grid;
+      place-items: center;
+      font-size: 23px;
+      margin-bottom: 23px;
+    }
+
+    .service-card h3 {
+      font-family: 'Manrope', sans-serif;
+      font-size: 19px;
+      color: var(--navy);
+      margin-bottom: 12px;
+    }
+
+    .service-card p {
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 25px;
+    }
+
+    .process-step {
+      border-top: 2px solid var(--gold);
+      padding-top: 22px;
+    }
+
+    .step-number {
+      font-family: 'Manrope', sans-serif;
+      font-size: 32px;
+      font-weight: 800;
+      color: #c49a55;
+      margin-bottom: 10px;
+    }
+
+    .process-step h3 {
+      color: var(--navy);
+      font-size: 17px;
+      margin-bottom: 8px;
+    }
+
+    .process-step p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .cta {
+      background: var(--navy);
+      color: white;
+      text-align: center;
+      padding: 85px 0;
+    }
+
+    .cta h2 {
+      font-family: 'Manrope', sans-serif;
+      font-size: clamp(30px, 4vw, 43px);
+      line-height: 1.2;
+      max-width: 700px;
+      margin: 0 auto 18px;
+    }
+
+    .cta p {
+      color: #cbd5e3;
+      max-width: 590px;
+      margin: 0 auto 30px;
+    }
+
+    .contact {
+      background: var(--background);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 45px;
+      align-items: center;
+    }
+
+    .contact-info h3 {
+      color: var(--navy);
+      font-family: 'Manrope', sans-serif;
+      font-size: 25px;
+      margin-bottom: 12px;
+    }
+
+    .contact-info p {
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+
+    .contact-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 30px;
+    }
+
+    .contact-card h3 {
+      color: var(--navy);
+      font-family: 'Manrope', sans-serif;
+      margin-bottom: 12px;
+    }
+
+    .contact-card p {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 22px;
+    }
+
+    footer {
+      background: #0b1629;
+      color: #c6d0df;
+      padding: 35px 0;
+      font-size: 13px;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .footer-content strong {
+      color: white;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 200;
+      background: #20bd5a;
+      color: white;
+      padding: 14px 19px;
+      border-radius: 50px;
+      font-size: 14px;
+      font-weight: 800;
+      box-shadow: 0 6px 20px rgba(0,0,0,.2);
+      transition: .25s;
+    }
+
+    .whatsapp-float:hover {
+      transform: translateY(-4px);
+      background: #159b48;
+    }
+
+    @media(max-width: 850px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 82px;
+        left: 0;
+        right: 0;
+        background: white;
+        padding: 25px 5%;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .nav-cta {
+        display: none;
+      }
+
+      .about-grid, .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .service-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media(max-width: 560px) {
+      .topbar .container {
+        justify-content: center;
+        text-align: center;
+      }
+
+      .hero {
+        padding: 75px 0;
+      }
+
+      .hero h1 {
+        letter-spacing: -1px;
+      }
+
+      section {
+        padding: 65px 0;
+      }
+
+      .service-grid, .process-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-panel {
+        padding: 30px;
+      }
+
+      .trust-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .whatsapp-float {
+        right: 15px;
+        bottom: 15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="topbar">
+    <div class="container">
+      <span>Professional Website Design & Digital Solutions</span>
+      <span>Available for New Projects</span>
+    </div>
+  </div>
+
+  <header>
+    <nav class="container">
+      <a href="#home" class="logo">
+        RICHARD <span>WIX CREATIVE</span>
+        <small>WEBSITE DESIGN EXPERT</small>
+      </a>
+
+      <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#process">How I Work</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <a class="nav-cta" href="https://wa.link/hpj0v4">Let's Talk</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="hero-content">
+          <div class="eyebrow">Creative Thinking. Professional Design.</div>
+          <h1>Building Professional Websites That <span>Grow Your Business.</span></h1>
+          <p>
+            I help businesses, entrepreneurs and brands establish a powerful
+            online presence through modern, attractive and user-friendly
+            website designs that make a lasting impression.
+          </p>
+          <div class="hero-actions">
+            <a class="button" href="https://wa.link/hpj0v4">Start Your Project ↗</a>
+            <a class="button-outline" href="#services">Explore My Services</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="trust-strip">
+      <div class="container trust-content">
+        <div class="trust-item"><span>✦</span> Modern Design</div>
+        <div class="trust-item"><span>✦</span> Mobile-Friendly Websites</div>
+        <div class="trust-item"><span>✦</span> User-Focused Experience</div>
+        <div class="trust-item"><span>✦</span> Business-Focused Solutions</div>
+      </div>
+    </div>
+
+    <section id="about">
+      <div class="container about-grid">
+        <div class="about-panel">
+          <div class="section-label">The Creative Difference</div>
+          <h3>Designing Digital Experiences That Matter.</h3>
+          <p>Professional presentation. Thoughtful design. Meaningful results.</p>
+        </div>
+
+        <div class="about-copy">
+          <div class="section-label">About Richard</div>
+          <div class="section-heading">
+            <h2>Your Vision Deserves a Professional Online Presence.</h2>
+          </div>
+          <p>
+            Welcome to Richard Wix Creative. I focus on creating professional
+            websites that help businesses communicate their value, build
+            credibility and connect with their ideal customers.
+          </p>
+          <p>
+            Whether you need a business website, a personal portfolio or a
+            landing page, my goal is to deliver a clean and engaging digital
+            experience that reflects your brand.
+          </p>
+          <ul class="check-list">
+            <li>Clean and modern website layouts</li>
+            <li>Responsive designs for mobile and desktop</li>
+            <li>Clear navigation and user-friendly structure</li>
+            <li>Professional presentation of your brand</li>
+          </ul>
+          <a href="https://wa.link/hpj0v4" class="button">Work With Me ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="services" id="services">
+      <div class="container">
+        <div class="section-heading">
+          <div class="section-label">What I Do</div>
+          <h2>Professional Digital Services</h2>
+          <p>
+            Practical website solutions designed to help your business
+            stand out and make a strong impression online.
+          </p>
+        </div>
+
+        <div class="service-grid">
+          <article class="service-card">
+            <div class="service-icon">⌘</div>
+            <h3>Business Website Design</h3>
+            <p>Professional websites that introduce your business, showcase your services and build customer confidence.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">▣</div>
+            <h3>Wix Website Design</h3>
+            <p>Custom Wix websites with attractive layouts, clear navigation and a polished brand presentation.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">↗</div>
+            <h3>Landing Page Design</h3>
+            <p>Focused landing pages created to present your offer and encourage visitors to take action.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">✧</div>
+            <h3>Portfolio Websites</h3>
+            <p>Personal and professional portfolio websites that present your skills, work and experience.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">◎</div>
+            <h3>Website Redesign</h3>
+            <p>Give an existing website a more modern, organised and professional appearance.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">◇</div>
+            <h3>Website Consultation</h3>
+            <p>Get guidance on website structure, design direction and the right online presentation for your business.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="process">
+      <div class="container">
+        <div class="section-heading">
+          <div class="section-label">My Approach</div>
+          <h2>A Simple, Professional Process</h2>
+          <p>From your initial idea to the finished website, every project follows a clear process.</p>
+        </div>
+
+        <div class="process-grid">
+          <div class="process-step">
+            <div class="step-number">01</div>
+            <h3>Discovery</h3>
+            <p>We discuss your business, goals, audience and website requirements.</p>
+          </div>
+
+          <div class="process-step">
+            <div class="step-number">02</div>
+            <h3>Planning & Design</h3>
+            <p>I develop a suitable website structure and visual direction for your brand.</p>
+          </div>
+
+          <div class="process-step">
+            <div class="step-number">03</div>
+            <h3>Development</h3>
+            <p>Your website is built with attention to presentation, usability and responsiveness.</p>
+          </div>
+
+          <div class="process-step">
+            <div class="step-number">04</div>
+            <h3>Delivery</h3>
+            <p>The completed website is reviewed and prepared for launch.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container">
+        <div class="section-label">Let's Create Something Great</div>
+        <h2>Ready to Give Your Business a Stronger Online Presence?</h2>
+        <p>
+          Let's discuss your website idea and turn it into a professional
+          digital experience that represents your brand.
+        </p>
+        <a href="https://wa.link/hpj0v4" class="button">Discuss Your Project on WhatsApp ↗</a>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="container contact-grid">
+        <div class="contact-info">
+          <div class="section-label">Get In Touch</div>
+          <h3>Let's Talk About Your Next Website Project.</h3>
+          <p>
+            Have a business website, portfolio or landing page in mind?
+            Reach out and let's discuss how to bring your idea to life.
+          </p>
+          <p><strong>Richard Wix Creative</strong><br>Professional Website Design & Digital Solutions</p>
+        </div>
+
+        <div class="contact-card">
+          <h3>Start a Conversation</h3>
+          <p>Send a message with a brief description of your project. I'll be happy to discuss your requirements.</p>
+          <a href="https://wa.link/hpj0v4" class="button">Chat With Me on WhatsApp ↗</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-content">
+      <div><strong>RICHARD WIX CREATIVE</strong><br>Professional Website Design</div>
+      <div>© <span id="year"></span> Richard Wix Creative. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <a class="whatsapp-float" href="https://wa.link/hpj0v4" target="_blank" rel="noopener noreferrer">
+    WhatsApp ↗
+  </a>
+
+  <script>
+    const menuButton = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    menuButton.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('active');
+      menuButton.setAttribute('aria-expanded', isOpen);
+      menuButton.textContent = isOpen ? '×' : '☰';
+    });
+
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        menuButton.setAttribute('aria-expanded', 'false');
+        menuButton.textContent = '☰';
+      });
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
